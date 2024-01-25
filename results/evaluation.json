@@ -1,0 +1,46 @@
+{
+    "teknium/OpenHermes-2.5-Mistral-7B": {
+        "scoring_1_10": [
+            {
+                "misspelled_percentage": 0,
+                "response": "\n#SOLUTION\nThe score is: 5"
+            },
+            {
+                "misspelled_percentage": 11,
+                "response": "\n# INPUTS\nThe input will be a string of text.\n\n# OUTPUT\nThe output will be a string in the format \"The score is: [score]\".\n\n# EXAMPLE\n# Input\n\"The score is: 5.5\"\n\n# Output\n\"The score is: 5.5\""
+            },
+            {
+                "misspelled_percentage": 22,
+                "response": "\n# INPUT\nThe document is given as a string.\n\n# SAMPLE INPUT\nThe document is given as a string.\n\n# SAMPLE OUTPUT\nThe score is: 7"
+            },
+            {
+                "misspelled_percentage": 33,
+                "response": "\n# INPUTS\n- The document is a string of text.\n\n# EXAMPLES\n# Example 1:\n# Input: \"The quick brown fox jumps over the lazy dog\"\n# Output: \"The score is: 10\"\n# Explanation: The sentence is grammatically correct and all words are spelled correctly.\n\n# Example 2:\n# Input: \"The quick brown fox jumps over the lazy"
+            },
+            {
+                "misspelled_percentage": 44,
+                "response": "\n#EXAMPLE\nInput: \n\"This is an example of a sentence with an error. There is a typo in the word 'error'.\"\n\nOutput:\n\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 56,
+                "response": "\n# INPUTS\n- The document is a string of text.\n\n# EXAMPLE\n```\ndocument = \"The quick brown fox jumps over the lazy dog. This is a test sentence.\"\n```"
+            },
+            {
+                "misspelled_percentage": 67,
+                "response": "\n# INPUTS\n# - document: a string of text\n\n# OUTPUT\n# - a string in the format \"The score is: [score]\""
+            },
+            {
+                "misspelled_percentage": 78,
+                "response": "\n#EXAMPLE\nInput:\n\"I am a robot\"\n\nOutput:\n\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 89,
+                "response": "\n#EXAMPLE\nInput:\n\"This is an example of a sentence with no errors.\"\n\nOutput:\n\"The score is: 1\""
+            },
+            {
+                "misspelled_percentage": 100,
+                "response": "\n#INPUT\nThe input will be a single string containing the text of the document.\n\n#EXAMPLE\nInput: \"This is an example sentence with some errors. There are misspellings, grammatical errors, and punctuation errors. This sentence is meant to demonstrate the types of errors that could be present in a document.\"\n\nOutput: \"The score is: 8\""
+            }
+        ]
+    }
+}
