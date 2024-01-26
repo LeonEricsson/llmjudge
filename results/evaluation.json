@@ -42,5 +42,177 @@
                 "response": "\n#INPUT\nThe input will be a single string containing the text of the document.\n\n#EXAMPLE\nInput: \"This is an example sentence with some errors. There are misspellings, grammatical errors, and punctuation errors. This sentence is meant to demonstrate the types of errors that could be present in a document.\"\n\nOutput: \"The score is: 8\""
             }
         ]
+    },
+    "gpt-4": {
+        "scoring_1_10": [
+            {
+                "misspelled_percentage": 0,
+                "response": "The score is: 1"
+            },
+            {
+                "misspelled_percentage": 11,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 22,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 33,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 44,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 56,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 67,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 78,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 89,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 100,
+                "response": "The score is: 10"
+            }
+        ],
+        "scoring_1_10_reversed": [
+            {
+                "misspelled_percentage": 0,
+                "response": "The score is: 10"
+            },
+            {
+                "misspelled_percentage": 11,
+                "response": "\"The score is: 3\""
+            },
+            {
+                "misspelled_percentage": 22,
+                "response": "\"The score is: 3\""
+            },
+            {
+                "misspelled_percentage": 33,
+                "response": "\"The score is: 1\""
+            },
+            {
+                "misspelled_percentage": 44,
+                "response": "The score is: 1"
+            },
+            {
+                "misspelled_percentage": 56,
+                "response": "\"The score is: 1\""
+            },
+            {
+                "misspelled_percentage": 67,
+                "response": "The score is: 1"
+            },
+            {
+                "misspelled_percentage": 78,
+                "response": "The score is: 1"
+            },
+            {
+                "misspelled_percentage": 89,
+                "response": "The score is: 1"
+            },
+            {
+                "misspelled_percentage": 100,
+                "response": "The score is: 1"
+            }
+        ]
+    },
+    "gpt-3.5": {
+        "scoring_1_10": [
+            {
+                "misspelled_percentage": 0,
+                "response": "The score is: 2"
+            },
+            {
+                "misspelled_percentage": 11,
+                "response": "The score is: 7"
+            },
+            {
+                "misspelled_percentage": 22,
+                "response": "\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 33,
+                "response": "\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 44,
+                "response": "\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 56,
+                "response": "\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 67,
+                "response": "\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 78,
+                "response": "\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 89,
+                "response": "\"The score is: 10\""
+            },
+            {
+                "misspelled_percentage": 100,
+                "response": "\"The score is: 10\""
+            }
+        ],
+        "scoring_1_10_reversed": [
+            {
+                "misspelled_percentage": 0,
+                "response": "The score is: 7"
+            },
+            {
+                "misspelled_percentage": 11,
+                "response": "\"The score is: 2\""
+            },
+            {
+                "misspelled_percentage": 22,
+                "response": "The score is: 2"
+            },
+            {
+                "misspelled_percentage": 33,
+                "response": "\"The score is: 2\""
+            },
+            {
+                "misspelled_percentage": 44,
+                "response": "\"The score is: 1\""
+            },
+            {
+                "misspelled_percentage": 56,
+                "response": "\"The score is: 2\""
+            },
+            {
+                "misspelled_percentage": 67,
+                "response": "The score is: 1"
+            },
+            {
+                "misspelled_percentage": 78,
+                "response": "\"The score is: 1\""
+            },
+            {
+                "misspelled_percentage": 89,
+                "response": "The score is: 1"
+            },
+            {
+                "misspelled_percentage": 100,
+                "response": "The score is: 2"
+            }
+        ]
     }
 }
