@@ -40,3 +40,5 @@ The complete code is readily available in as a [notebook](/dataset.ipynb). You'r
 Given the generated dataset, we prompt LLMs to evaluate the amount of misspelled words in a context using different scoring templates. The default template is the illustrated by Arize, with a score of 10 indicating 100% misspelled words and a score of 1 being 0% misspelled words.
 
 ## Results
+
+
