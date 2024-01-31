@@ -45,10 +45,10 @@ GPT-4: `gpt-4-0125-preview`
 
 GPT-3.5: `gpt-3.5-turbo-1106`
 
-with temperature = 0. 
+at temperature = 0. 
 
 ### Results
-First, let's confirm that LLMs struggle to handle numeric ranges in a zero-shot setting. We prompt GPT-3.5 and GPT-4 with a numeric scoring template, ranging from score 0 to score 10. 
+**Test 1.** Let's confirm that LLMs struggle to handle numeric ranges in a zero-shot setting. We prompt GPT-3.5 and GPT-4 with a numeric scoring template, ranging from score 0 to score 10. 
 
 ![](/figures/scoring_1_10.png)
 
@@ -56,26 +56,36 @@ As expected, both misjudge severely.
 
 --- 
 
-What happens if we reverse the scoring range? Now, a score of 10 represents a perfectly spelt document.
+**Test 2.** What happens if we reverse the scoring range? Now, a score of 10 represents a perfectly spelt document.
 
-![](/figures/gpt-3.5_scoring_1_10_reversed.png)
-![](/figures/gpt-4_scoring_1_10_reversed.png)
+![](/figures/scoring_1_10_reversed.png)
 
 This doesn't seem to make much of a difference.
 
 --- 
+**Test 3.** If we were to believe the hypothesis from Arize, we may see improvements if we avoid a scoring rubric and instead use 'labeled grades'. In this case I decided to move down to a 5-point grading scale.
 
-What about Chain-of-Thought? 
+![](/figures/scoring_grades.png)
 
-![](/figures/gpt-3.5_scoring_1_10_cot.png)
-![](/figures/gpt-4_scoring_1_10_cot.png)
-
-This definitely seems to improve things. We're getting closer to a linear correlation.
+Perhaps slight improvements? Difficult to say honestly. I'm not impressed.
 
 ---
 
-As [suggested](https://twitter.com/seungonekim/status/1749289437165769177) by the author of [Prometheus](https://arxiv.org/pdf/2310.08491.pdf): let's make sure to map an explanation to each score in the prompt. Combine this with CoT.
+**Test 4.** What about zero-shot Chain-of-Thought? 
 
-![](/figures/gpt-3.5_scoring_1_10_cot_full.png)
-![](/figures/gpt-4_scoring_1_10_cot_full.png)
+![](/figures/scoring_1_10_cot.png)
+
+gpt-3.5 devolved into gibberish for two of the prompts. gpt-4 sees improvement when prompted to think-out-loud. Notice how it get's very
+hesitant to assign a score of 10. 
+
+---
+
+**Test 5.** As [suggested](https://twitter.com/seungonekim/status/1749289437165769177) by the author of [Prometheus](https://arxiv.org/pdf/2310.08491.pdf); mapping each score with it's own explanation likely improves the LLMs ability to grade across the entire numeric
+range. This, combined with CoT, results in:
+
+![](/figures/scoring_1_10_full_cot.png)
+
+continued improvements for gpt-4. it's still very relucent to assign boundary scores 0 & 10.
+
+
 

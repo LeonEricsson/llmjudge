@@ -258,40 +258,44 @@
                 "response": "The score is: 7"
             },
             {
-                "misspelled_percentage": 11,
-                "response": "\"The score is: 2\""
+                "misspelled_percentage": 10,
+                "response": "\"The score is: 3\""
             },
             {
-                "misspelled_percentage": 22,
+                "misspelled_percentage": 20,
+                "response": "\"The score is: 3\""
+            },
+            {
+                "misspelled_percentage": 30,
                 "response": "The score is: 2"
             },
             {
-                "misspelled_percentage": 33,
+                "misspelled_percentage": 40,
+                "response": "The score is: 2"
+            },
+            {
+                "misspelled_percentage": 50,
+                "response": "The score is: 2"
+            },
+            {
+                "misspelled_percentage": 60,
                 "response": "\"The score is: 2\""
             },
             {
-                "misspelled_percentage": 44,
-                "response": "\"The score is: 1\""
-            },
-            {
-                "misspelled_percentage": 56,
+                "misspelled_percentage": 70,
                 "response": "\"The score is: 2\""
             },
             {
-                "misspelled_percentage": 67,
+                "misspelled_percentage": 80,
                 "response": "The score is: 1"
             },
             {
-                "misspelled_percentage": 78,
-                "response": "\"The score is: 1\""
-            },
-            {
-                "misspelled_percentage": 89,
-                "response": "The score is: 1"
+                "misspelled_percentage": 90,
+                "response": "The score is: 2"
             },
             {
                 "misspelled_percentage": 100,
-                "response": "The score is: 2"
+                "response": "\"The score is: 1\""
             }
         ],
         "scoring_grades": [
