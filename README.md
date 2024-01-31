@@ -1,4 +1,4 @@
-# Can we trust LLMs-as-a-judge?
+# LLMs-as-a-judge : Exploring limitations and capabilties
 *caution. this is an ongoing experiment. the readme is updated continously with new results. i'm actively looking for suggestions!*
 
 
@@ -14,7 +14,7 @@ Below are the full details and results.
 
 ### Methodology
 
-Due to cost constraints, I'll initially focus on the spelling/misspelling task described in the tweets. I'm slightly worried that the quantitative X of this task is going to contaminate the insights of this experiment, but we'll see.  
+Due to cost constraints, I'll initially focus on the spelling/misspelling task described in the tweets. I'm slightly worried that the quantitative X of this task is going to contaminate the insights of this experiment, but we'll see. I welcome a more full flegded analysis of this phenomena, my results should be taken with a grain of salt given the limited experiment
 
 #### Spelling Dataset
 
