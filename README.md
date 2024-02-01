@@ -14,7 +14,7 @@ Below are the full details and results.
 
 ### Methodology
 
-Due to cost constraints, I'll initially focus on the spelling/misspelling task described in the tweets. I'm slightly worried that the quantitative X of this task is going to contaminate the insights of this experiment, but we'll see.  
+Due to cost constraints, I'll initially focus on the spelling/misspelling task described in the tweets. I'm slightly worried that the quantitative nature of this task is going to contaminate our insights, so we'll have to keep that in mind.
 
 #### Spelling Dataset
 
@@ -75,7 +75,7 @@ Perhaps slight improvements? Difficult to say honestly. I'm not impressed.
 
 ![](/figures/scoring_1_10_cot.png)
 
-gpt-3.5 devolved into gibberish for two of the prompts. gpt-4 sees improvement when prompted to think-out-loud. Notice how it get's very
+gpt-3.5 devolved into gibberish for two of the prompts. As expected, gpt-4 sees improvement when prompted to think-out-loud. Notice how it get's very
 hesitant to assign a score of 10. 
 
 ---
@@ -85,7 +85,14 @@ range. This, combined with CoT, results in:
 
 ![](/figures/scoring_1_10_full_cot.png)
 
-continued improvements for gpt-4. it's still very relucent to assign boundary scores 0 & 10.
+Continued improvements for gpt-4. It's still very relucent to assign boundary scores 0 & 10. 
 
 
+## Discussion (free-form, continuously updated)
 
+#### MT Bench
+I've been going through the internals of MT-Bench, and was very surprised to find they simply ask GPT-4 to score outputs on a scale of 1-10. They do supply alternative grading options such as pairwise comparisons against a baseline but the recommended option is the numeric one. The judgement prompt is also unexpectedly simple: 
+
+*Please act as an impartial judge and evaluate the quality of the response provided by an AI assistant to the user question displayed below. Your evaluation should consider factors such as the helpfulness, relevance, accuracy, depth, creativity, and level of detail of the response. Begin your evaluation by providing a short explanation. Be as objective as possible. After providing your explanation, you must rate the response on a scale of 1 to 10 by strictly following this format: [rating], for example: "Rating: 5". [Question] {question} [The Start of Assistant's Answer] {answer} [The End of Assistant's Answer]*
+
+If one is to believe that this is all there is to judging in MT-Bench, then I'm beginning to question the use of the misspelling task as a proxy task... 
