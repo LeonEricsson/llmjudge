@@ -1,10 +1,10 @@
-# Can we trust LLMs-as-a-judge?
+# LLMs-as-a-judge : Exploring limitations and capabilties
 *caution. this is an ongoing experiment. the readme is updated continously with new results. i'm actively looking for suggestions!*
 
 
-Evaluating LLMs in a open-ended scenario is difficult, there's a growing consensus that existing benchmarks are lacking and seasoned practitioners prefer to _vibe check_ models themselves. I've resorted to anecdotal evaluations from developers and researchers I trust, and [Chatbot Arena](https://arena.lmsys.org/) as an excellent complement. The motivation behind this repo is the increasingly popular method of using strong LLMs as a judge for models. This method has been around for a few months, with models such as [JudgeLM](https://github.com/baaivision/JudgeLM), and more recently [MT-Bench](https://arxiv.org/pdf/2306.05685.pdf).
+Evaluating LLMs in a open-ended scenario is difficult, there's a growing consensus that existing benchmarks are lacking and seasoned practitioners prefer to _vibe check_ models themselves. I've resorted to anecdotal evaluations from developers and researchers I trust, with [Chatbot Arena](https://arena.lmsys.org/) being an excellent complement. The motivation behind this repo is the increasingly popular method of using strong LLMs as a judge for models. This method has been around for a few months, with models such as [JudgeLM](https://github.com/baaivision/JudgeLM), and more recently [MT-Bench](https://arxiv.org/pdf/2306.05685.pdf).
 
-You may or may not have seen [this thread](https://twitter.com/aparnadhinak/status/1748368364395721128). According to the authors of the tweet at Arize AI, using LLMs-as-a-judge warrants server caution, specifically in regards to the use of numeric score evaluations. It seems that LLMs are very poor at handling continuous ranges, which becomes glaringly obvious when prompting them to evaluate **X** from 1 to 10. This repo is a living document of experiments attempting to understand, capture and perhaps even find an alternative solution. From the limited time I spent researching this problem I found numerous papers using LLMs as a judge in this specific manner and it worries me that a lack of understanding of this *jagged frontier* will hinder continued success.
+You may or may not have seen [this thread](https://twitter.com/aparnadhinak/status/1748368364395721128). According to the authors of the tweet at Arize AI, using LLMs-as-a-judge warrants server caution, specifically in regards to the use of numeric score evaluations. It seems that LLMs are very poor at handling continuous ranges, which becomes glaringly obvious when prompting them to evaluate **X** from 1 to 10. This repo is a living document of experiments attempting to understand and capture the *jagged frontier* of this problem. Recent [work](https://twitter.com/gblazex/status/1746295870792847562) has established **a strong correlation between MT-Bench and Human Judgment (Arena Elo)**, meaning that LLMs are capable of being judges, so what's going on here?
 
 ## Key Findings
 T.B.D
@@ -14,7 +14,7 @@ Below are the full details and results.
 
 ### Methodology
 
-Due to cost constraints, I'll initially focus on the spelling/misspelling task described in the tweets. I'm slightly worried that the quantitative nature of this task is going to contaminate our insights, so we'll have to keep that in mind.
+Due to cost constraints, I'll initially focus on the spelling/misspelling task described in the tweets. I'm slightly worried that the quantitative X of this task is going to contaminate the insights of this experiment, but we'll see. I welcome a more full flegded analysis of this phenomena, my results should be taken with a grain of salt given the limited experiment
 
 #### Spelling Dataset
 
