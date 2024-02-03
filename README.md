@@ -87,12 +87,22 @@ range. This, combined with CoT, results in:
 
 Continued improvements for gpt-4. It's still very relucent to assign boundary scores 0 & 10. 
 
+---
+
+**Test 6.** After reading more about MT Bench I decided to test an alternate approach, using a pairwise comparisons as opposed to isolated scoring. Now, normally this would require O(n * log N) comparisons, but because we already know the order I figured we'd just test the hardest cases: comparing 0% misspelling vs 10% misspelling, 10% vs 20% and so on for a total of 10 comparisons. Notice that I used zero-shot CoT as well.
+
+![](/figures/pairwise_cot.png)
+
+My hypothesis was that GPT-4 would have excelled in a scenario where it got to compare two texts inside it's context window but I was wrong. To my surprise this really didn't improve things at all. Sure, this is the hardest out of all possible comparisons but all in all this is still a straight forward task. Maybe the quantitative aspects of this task are just inherently very difficult for LLMs. Hmm, perhaps I need to find a better proxy task...
 
 ## Discussion (free-form, continuously updated)
 
 #### MT Bench
-I've been going through the internals of MT-Bench, and was very surprised to find they simply ask GPT-4 to score outputs on a scale of 1-10. They do supply alternative grading options such as pairwise comparisons against a baseline but the recommended option is the numeric one. The judgement prompt is also unexpectedly simple: 
+*(31/1)* I've been going through the internals of MT-Bench, and was very surprised to find they simply ask GPT-4 to score outputs on a scale of 1-10. They do supply alternative grading options such as pairwise comparisons against a baseline but the recommended option is the numeric one. The judgement prompt is also unexpectedly simple: 
 
 *Please act as an impartial judge and evaluate the quality of the response provided by an AI assistant to the user question displayed below. Your evaluation should consider factors such as the helpfulness, relevance, accuracy, depth, creativity, and level of detail of the response. Begin your evaluation by providing a short explanation. Be as objective as possible. After providing your explanation, you must rate the response on a scale of 1 to 10 by strictly following this format: [rating], for example: "Rating: 5". [Question] {question} [The Start of Assistant's Answer] {answer} [The End of Assistant's Answer]*
 
 If one is to believe that this is all there is to judging in MT-Bench, then I'm beginning to question the use of the misspelling task as a proxy task... 
+
+#### Experiments
+*(2/2)* I'm keen on making GPT-4 judge the misspelled texts through a pairwise comparison as opposed to isolated scoring. This is one of the alternative judgment methods for MT Bench (although they do recommend isolated scoring), and I suspect that it is more suitable for this task. The CoT + full mapping results are definitely an improvement but I still think there's work to be done. The drawback with pairwise scoring is of course that you're going to need significantly more API calls to establish the full ranking (in practice).
